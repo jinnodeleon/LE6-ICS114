@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>com.control.Controller</servlet-class>
+        <!--Parameter 1 DRIVER NAME START-->
+        <init-param>
+            <param-name>driverClass</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <!--Parameter 1 END-->
+        <!--Parameter 2 USER START-->
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 2 END-->
+        <!--Parameter 3 PASS START-->
+        <init-param>
+            <param-name>pass</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 3 END-->
+        <!--Parameter FULL URL IF NEEDED START-->
+        <init-param>
+            <param-name>finalUrl</param-name>
+            <param-value>jdbc:derby://localhost:1527/UserDB</param-value>
+        </init-param>
+        <!--Parameter FULL URL IF NEEDED END-->
+        <!--Parameter 4 URL START-->
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <!--Parameter 4 END-->
+        <!--Parameter 5 URL START-->
+        <init-param>
+            <param-name>host</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <!--Parameter 5 END-->
+        <!--Parameter 6 URL START-->
+        <init-param>
+            <param-name>port</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <!--Parameter 6 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>UserDB</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Cipher</param-name>
+            <param-value>AES/ECB/PKCS5Padding</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Key</param-name>
+            <param-value>thisisjinnosukey</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>keyFormat</param-name>
+            <param-value>AES</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <init-param>
+            <param-name>sqlQuery</param-name>
+            <param-value>INSERT INTO StudentDb (STUDENT_NAME, STUDENT_NUMBER, course) VALUES (?, ?, ?)</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>registerProcess</servlet-name>
+        <servlet-class>com.control.registerProcess</servlet-class>
+        <!--Parameter 1 DRIVER NAME START-->
+        <init-param>
+            <param-name>driverClass</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <!--Parameter 1 END-->
+        <!--Parameter 2 USER START-->
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 2 END-->
+        <!--Parameter 3 PASS START-->
+        <init-param>
+            <param-name>pass</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 3 END-->
+        <!--Parameter FULL URL IF NEEDED START-->
+        <init-param>
+            <param-name>finalUrl</param-name>
+            <param-value>jdbc:derby://localhost:1527/UserDB</param-value>
+        </init-param>
+        <!--Parameter FULL URL IF NEEDED END-->
+        <!--Parameter 4 URL START-->
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <!--Parameter 4 END-->
+        <!--Parameter 5 URL START-->
+        <init-param>
+            <param-name>host</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <!--Parameter 5 END-->
+        <!--Parameter 6 URL START-->
+        <init-param>
+            <param-name>port</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <!--Parameter 6 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>UserDB</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Cipher</param-name>
+            <param-value>AES/ECB/PKCS5Padding</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Key</param-name>
+            <param-value>thisisjinnosukey</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>keyFormat</param-name>
+            <param-value>AES</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <init-param>
+            <param-name>sqlQuery</param-name>
+            <param-value>INSERT INTO StudentDb (STUDENT_NAME, STUDENT_NUMBER, course) VALUES (?, ?, ?)</param-value>
+        </init-param>
+    </servlet>
+    <context-param>
+        <param-name>myCipher</param-name>
+        <param-value>AES/ECB/PKCS5Padding</param-value>
+    </context-param>
+    <context-param>
+        <param-name>header</param-name>
+        <param-value>header.jsp</param-value>
+    </context-param>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <listener>
+        <listener-class>com.control.Listener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>ControllerLogout</servlet-name>
+        <servlet-class>com.control.ControllerLogout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewProcess</servlet-name>
+        <servlet-class>com.control.viewProcess</servlet-class>
+        <!--Parameter 1 DRIVER NAME START-->
+        <init-param>
+            <param-name>driverClass</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <!--Parameter 1 END-->
+        <!--Parameter 2 USER START-->
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 2 END-->
+        <!--Parameter 3 PASS START-->
+        <init-param>
+            <param-name>pass</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 3 END-->
+        <!--Parameter FULL URL IF NEEDED START-->
+        <init-param>
+            <param-name>finalUrl</param-name>
+            <param-value>jdbc:derby://localhost:1527/UserDB</param-value>
+        </init-param>
+        <!--Parameter FULL URL IF NEEDED END-->
+        <!--Parameter 4 URL START-->
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <!--Parameter 4 END-->
+        <!--Parameter 5 URL START-->
+        <init-param>
+            <param-name>host</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <!--Parameter 5 END-->
+        <!--Parameter 6 URL START-->
+        <init-param>
+            <param-name>port</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <!--Parameter 6 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>UserDB</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Cipher</param-name>
+            <param-value>AES/ECB/PKCS5Padding</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Key</param-name>
+            <param-value>thisisjinnosukey</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>keyFormat</param-name>
+            <param-value>AES</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <init-param>
+            <param-name>sqlQuery</param-name>
+            <param-value>INSERT INTO StudentDb (STUDENT_NAME, STUDENT_NUMBER, course) VALUES (?, ?, ?)</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>MyPDF</servlet-name>
+        <servlet-class>com.control.MyPDF</servlet-class>
+        <!--Parameter 1 DRIVER NAME START-->
+        <init-param>
+            <param-name>driverClass</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <!--Parameter 1 END-->
+        <!--Parameter 2 USER START-->
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 2 END-->
+        <!--Parameter 3 PASS START-->
+        <init-param>
+            <param-name>pass</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <!--Parameter 3 END-->
+        <!--Parameter FULL URL IF NEEDED START-->
+        <init-param>
+            <param-name>finalUrl</param-name>
+            <param-value>jdbc:derby://localhost:1527/UserDB</param-value>
+        </init-param>
+        <!--Parameter FULL URL IF NEEDED END-->
+        <!--Parameter 4 URL START-->
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <!--Parameter 4 END-->
+        <!--Parameter 5 URL START-->
+        <init-param>
+            <param-name>host</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <!--Parameter 5 END-->
+        <!--Parameter 6 URL START-->
+        <init-param>
+            <param-name>port</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <!--Parameter 6 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>UserDB</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Cipher</param-name>
+            <param-value>AES/ECB/PKCS5Padding</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>Key</param-name>
+            <param-value>thisisjinnosukey</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <!--Parameter 7 URL START-->
+        <init-param>
+            <param-name>keyFormat</param-name>
+            <param-value>AES</param-value>
+        </init-param>
+        <!--Parameter 7 END-->
+        <init-param>
+            <param-name>sqlQuery</param-name>
+            <param-value>INSERT INTO StudentDb (STUDENT_NAME, STUDENT_NUMBER, course) VALUES (?, ?, ?)</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerProcess</servlet-name>
+        <url-pattern>/registerProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerLogout</servlet-name>
+        <url-pattern>/ControllerLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewProcess</servlet-name>
+        <url-pattern>/viewProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyPDF</servlet-name>
+        <url-pattern>/MyPDF</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
